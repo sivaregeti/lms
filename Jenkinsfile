@@ -20,11 +20,7 @@ pipeline {
             steps {
                 script {
                     echo "Releasing.."       
-                    def packageJSON = readJSON file: 'webapp/package.json'
-                    def packageJSONVersion = packageJSON.version
-                    echo "${packageJSONVersion}"  
-                    sh "zip webapp/dist-${packageJSONVersion}.zip -r webapp/dist"
-                    sh "curl -v -u admin:Admin123* --upload-file webapp/dist-${packageJSONVersion}.zip http://54.210.124.28:8081/repository/lms/"     
+
             }
             }
         }
